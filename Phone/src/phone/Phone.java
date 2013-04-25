@@ -27,7 +27,7 @@ public class Phone extends JFrame{
 	JButton left = new JButton("<");
 	JButton right = new JButton(">");
 	JButton select = new JButton("O");
-	//MainMenu currentMenu = new MainMenu();
+	MainMenu currentMenu = new MainMenu();
 	//MainMenu newMenu = new MainMenu();
 	String brand = "Sony Ericsson"; 
 	
@@ -38,7 +38,7 @@ public class Phone extends JFrame{
 		lblBrand.setHorizontalAlignment(SwingConstants.CENTER); 
 		this.add(lblBrand, BorderLayout.NORTH);
 
-		this.add(new MainMenu(), BorderLayout.CENTER); 
+		this.add(currentMenu, BorderLayout.CENTER); 
 		
 		JTextArea taScreen = new JTextArea(); 
 		taScreen.setEditable(false); 
@@ -134,8 +134,8 @@ public class Phone extends JFrame{
 			
 			//Actions when buttons are pressed
 			String data = e.getActionCommand();
-			//if(data.equals("^")) currentMenu.buttonUp();
-			//if(data.equals("v")) currentMenu.buttonDown();
+			if(data.equals("^")) currentMenu.buttonUp();
+			if(data.equals("v")) currentMenu.buttonDown();
 		}
 	}
 	
