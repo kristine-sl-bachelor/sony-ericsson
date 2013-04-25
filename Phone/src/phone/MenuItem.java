@@ -8,10 +8,12 @@ import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
 public class MenuItem extends JTextField{
-
-	public MenuItem(String text) {
+	String menuPointer;
+	public MenuItem(String text, String menuPointer) {
 		
 		super(text); 
+		
+		this.menuPointer = menuPointer;
 		
 		this.setBackground(Color.DARK_GRAY); 
 		this.setForeground(Color.WHITE);

@@ -40,9 +40,14 @@ public class Menu extends JPanel{
 		}
 		
 	}
+	
 	public void SetActive(){
 		itemList[currentMenuItem] .setBackground(Color.GRAY);
 		itemList[prevMenuItem].setBackground(Color.DARK_GRAY);
+	}
+	
+	public String getMenuItem(){
+		return itemList[currentMenuItem].menuPointer;
 	}
 	
 }

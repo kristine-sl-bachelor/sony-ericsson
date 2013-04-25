@@ -136,6 +136,7 @@ public class Phone extends JFrame{
 			String data = e.getActionCommand();
 			if(data.equals("^")) currentMenu.buttonUp();
 			if(data.equals("v")) currentMenu.buttonDown();
+			if(data.equals("O")) System.out.println(currentMenu.getMenuItem());
 		}
 	}
 	
