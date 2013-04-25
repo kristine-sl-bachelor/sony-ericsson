@@ -36,7 +36,9 @@ public class Phone extends JFrame{
 		lblBrand.setHorizontalAlignment(SwingConstants.CENTER); 
 		this.add(lblBrand, BorderLayout.NORTH); 
 		
-		this.add(new MainMenu(), BorderLayout.CENTER); 
+		JTextArea taScreen = new JTextArea(); 
+		taScreen.setEditable(false); 
+		this.add(new Menu(), BorderLayout.CENTER); 
 		
 		this.add(new Buttons(), BorderLayout.SOUTH); 
 		
