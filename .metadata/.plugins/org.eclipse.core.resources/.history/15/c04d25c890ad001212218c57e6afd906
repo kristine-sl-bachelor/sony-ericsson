@@ -1,0 +1,25 @@
+package phone;
+
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+
+public class Menu extends JScrollPane{
+
+	public Menu() {
+		
+		String[] menuItems = {
+				"Item 1", 
+				"Item 2", 
+				"Item 3", 
+				"Item 4", 
+				"Item 5"
+		};
+		
+		for(String item : menuItems) {
+			JLabel lbl = new JLabel(item);
+			this.add(lbl); 
+		}
+		
+	}
+	
+}

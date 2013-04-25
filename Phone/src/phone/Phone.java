@@ -3,6 +3,8 @@ package phone;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class Phone extends JFrame{
 
 	String[] optionKeys = {"Menu", "Back", "Messages", "C"};
@@ -35,7 +38,7 @@ public class Phone extends JFrame{
 		
 		JTextArea taScreen = new JTextArea(); 
 		taScreen.setEditable(false); 
-		this.add(taScreen, BorderLayout.CENTER); 
+		this.add(new Menu(), BorderLayout.CENTER); 
 		
 		this.add(new Buttons(), BorderLayout.SOUTH); 
 		
@@ -44,6 +47,7 @@ public class Phone extends JFrame{
 		this.setLocationRelativeTo(null); 
 		this.setResizable(false); 
 		this.setVisible(true); 
+
 	}
 	
 	public class Buttons extends JPanel {
@@ -107,7 +111,15 @@ public class Phone extends JFrame{
 			
 			this.add(pnlNumPad, BorderLayout.CENTER); 
 		}
-		
+	}
+	
+	
+	public class EventHandler implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			
+			//Actions when buttons are pressed 
+			
+		}
 	}
 	
 	public static void main(String[] args) {

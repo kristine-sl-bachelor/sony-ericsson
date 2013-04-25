@@ -1,0 +1,32 @@
+package phone;
+
+import java.awt.GridLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+public class Menu extends JPanel{
+
+	public Menu() {
+		
+		String[] menuItems = {
+			"Item 1", 
+			"Item 2", 
+			"Item 3", 
+			"Item 4", 
+			"Item 5"
+				
+		}; 
+		
+		this.setLayout(new GridLayout(menuItems.length, 1)); 
+		
+		for(String item : menuItems) {
+			JLabel lbl = new JLabel(item); 
+			lbl.setHorizontalAlignment(SwingConstants.CENTER); 
+			add(lbl); 
+		}
+		
+	}
+	
+}

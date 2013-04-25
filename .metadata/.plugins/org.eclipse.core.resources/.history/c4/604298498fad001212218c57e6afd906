@@ -1,0 +1,28 @@
+package phone;
+
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+public class Menu extends JPanel{
+
+	public Menu() {
+		
+		String[] menuItems = {
+				"Item 1", 
+				"Item 2", 
+				"Item 3"
+		};
+		
+		this.setLayout(new GridLayout(menuItems.length, 1)); 
+		
+		for(String item : menuItems) {
+			JButton btn = new JButton(item); 
+			btn.setSelected(false); 
+			add(btn);
+		}
+		
+	}
+	
+}
