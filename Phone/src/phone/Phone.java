@@ -1,6 +1,7 @@
 package phone;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -26,7 +27,8 @@ public class Phone extends JFrame{
 	JButton left = new JButton("<");
 	JButton right = new JButton(">");
 	JButton select = new JButton("O");
-	
+	Menu currentMenu = new Menu(Color.GRAY, Color.WHITE);
+	Menu newMenu = new Menu(Color.PINK, Color.GREEN);
 	String brand = "Sony Ericsson"; 
 	
 	public Phone() {
@@ -38,7 +40,7 @@ public class Phone extends JFrame{
 		
 		JTextArea taScreen = new JTextArea(); 
 		taScreen.setEditable(false); 
-		this.add(new Menu(), BorderLayout.CENTER); 
+		this.add(currentMenu, BorderLayout.CENTER); 
 		
 		this.add(new Buttons(), BorderLayout.SOUTH); 
 		
@@ -53,9 +55,9 @@ public class Phone extends JFrame{
 	public class Buttons extends JPanel {
 		
 		public Buttons() {
-			
 			super(new BorderLayout()); 
-			
+
+			EventHandler handler = new EventHandler();
 			//Option keys 
 			JPanel pnlOptionKeys = new JPanel(new BorderLayout()); 
 			
@@ -64,7 +66,9 @@ public class Phone extends JFrame{
 			JPanel pnlLeftKeys = new JPanel(new GridLayout(2, 1)); 
 			
 			for (int i = 0; i < 2; i++) {
-				pnlLeftKeys.add(new JButton(optionKeys[i])); 
+				JButton btn = new JButton(optionKeys[i]);
+				btn.addActionListener(handler);
+				pnlLeftKeys.add(btn); 
 			}
 						
 			pnlLeftKeys.setPreferredSize(dimension); 
@@ -72,7 +76,9 @@ public class Phone extends JFrame{
 			JPanel pnlRightKeys = new JPanel(new GridLayout(2,1)); 
 			
 			for (int i = 0; i < 2; i++) {
-				pnlRightKeys.add(new JButton(optionKeys[i + 2])); 
+				JButton btn = new JButton(optionKeys[i + 2]);
+				btn.addActionListener(handler);
+				pnlRightKeys.add(btn); 
 			}
 			
 			pnlRightKeys.setPreferredSize(dimension); 
@@ -88,6 +94,12 @@ public class Phone extends JFrame{
 			down.setPreferredSize(arrowDimension); 
 			left.setPreferredSize(arrowDimension); 
 			right.setPreferredSize(arrowDimension); 
+			
+			up.addActionListener(handler);
+			down.addActionListener(handler);
+			left.addActionListener(handler);
+			right.addActionListener(handler);
+			select.addActionListener(handler);
 			
 			pnlArrowKeys.add(up, BorderLayout.NORTH); 
 			pnlArrowKeys.add(down, BorderLayout.SOUTH); 
@@ -106,7 +118,9 @@ public class Phone extends JFrame{
 			JPanel pnlNumPad = new JPanel(new GridLayout(4, 3)); 
 			
 			for(String currentLabel : numbKeys) {
-				pnlNumPad.add(new JButton(currentLabel)); 
+				JButton btn = new JButton(currentLabel);
+				btn.addActionListener(handler);
+				pnlNumPad.add(btn); 
 			}
 			
 			this.add(pnlNumPad, BorderLayout.CENTER); 
@@ -117,8 +131,10 @@ public class Phone extends JFrame{
 	public class EventHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			
-			//Actions when buttons are pressed 
-			
+			//Actions when buttons are pressed
+			String data = e.getActionCommand();
+			if(data.equals("^")) currentMenu.buttonUp();
+			if(data.equals("v")) currentMenu.buttonDown();
 		}
 	}
 	
