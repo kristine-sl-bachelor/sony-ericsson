@@ -1,0 +1,34 @@
+package phone;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+public class Menu extends JPanel{
+
+	public Menu() {
+		
+		MenuItem[] items = {
+			new MenuItem("Item 1"), 
+			new MenuItem("Item 2"), 
+			new MenuItem("Item 3"), 
+			new MenuItem("Item 4"), 
+		}; 
+		
+		this.setLayout(new GridLayout(items.length, 1)); 
+		
+		for (MenuItem item : items) {
+			
+			item.selected(true); 
+			this.add(item); 
+			
+		}
+		
+		items[0].selected(true);
+	}
+	
+}
