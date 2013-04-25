@@ -27,8 +27,8 @@ public class Phone extends JFrame{
 	JButton left = new JButton("<");
 	JButton right = new JButton(">");
 	JButton select = new JButton("O");
-	Menu currentMenu = new Menu(Color.GRAY, Color.WHITE);
-	Menu newMenu = new Menu(Color.PINK, Color.GREEN);
+	//MainMenu currentMenu = new MainMenu();
+	//MainMenu newMenu = new MainMenu();
 	String brand = "Sony Ericsson"; 
 	
 	public Phone() {
@@ -36,11 +36,12 @@ public class Phone extends JFrame{
 		
 		JLabel lblBrand = new JLabel(this.brand);
 		lblBrand.setHorizontalAlignment(SwingConstants.CENTER); 
-		this.add(lblBrand, BorderLayout.NORTH); 
+		this.add(lblBrand, BorderLayout.NORTH);
+
+		this.add(new MainMenu(), BorderLayout.CENTER); 
 		
 		JTextArea taScreen = new JTextArea(); 
 		taScreen.setEditable(false); 
-		this.add(currentMenu, BorderLayout.CENTER); 
 		
 		this.add(new Buttons(), BorderLayout.SOUTH); 
 		
@@ -133,8 +134,8 @@ public class Phone extends JFrame{
 			
 			//Actions when buttons are pressed
 			String data = e.getActionCommand();
-			if(data.equals("^")) currentMenu.buttonUp();
-			if(data.equals("v")) currentMenu.buttonDown();
+			//if(data.equals("^")) currentMenu.buttonUp();
+			//if(data.equals("v")) currentMenu.buttonDown();
 		}
 	}
 	
