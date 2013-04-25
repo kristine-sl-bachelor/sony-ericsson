@@ -9,6 +9,9 @@ import javax.swing.SwingConstants;
 @SuppressWarnings("serial")
 public class MenuItem extends JTextField{
 
+	private String text; 
+	private Color color; 
+	
 	public MenuItem(String text) {
 		
 		super(text); 

@@ -1,6 +1,5 @@
 package phone;
 
-@SuppressWarnings("serial")
 public class MainMenu extends Menu{
 
 	private static MenuItem[] items = {

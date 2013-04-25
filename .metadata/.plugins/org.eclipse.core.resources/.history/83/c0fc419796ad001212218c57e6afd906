@@ -4,7 +4,6 @@ import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
 public class Menu extends JPanel{
 
 	public Menu(MenuItem[] items) {
